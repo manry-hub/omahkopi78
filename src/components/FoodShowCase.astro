@@ -1,0 +1,72 @@
+---
+const { menus = [] } = Astro.props;
+---
+
+<section>
+    <div class="ak-height-150 ak-height-lg-60" id="favorit-menu"></div>
+    <div class="container-fluid">
+        <div class="ak-section-heading ak-style-1 ak-type-1">
+            <div class="ak-section-subtitle">Menu</div>
+            <h2 class="ak-section-title anim-title">Menu Favorit</h2>
+        </div>
+        <div class="ak-height-65 ak-height-lg-30"></div>
+        <div class="ak-slider ak-slider-2">
+            <div class="swiper-wrapper">
+                {
+                    menus.map((menu: any) => (
+                        <div class="swiper-slide">
+                            <div class="ak-card ak-style-1">
+                                <a class="ak-card-img">
+                                    <img src={menu.image_url} alt={menu.name} />
+                                </a>
+
+                                <div class="card-info">
+                                    <div class="card-text style-1">
+                                        <h5 class="card-title">{menu.name}</h5>
+                                        <div class="card-subtitle">{menu.menu_categories?.name}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="ak-next-prev-2">
+                <div class="ak-next-prev-2 ak-style-1">
+                    <div class="ak-swiper-button-prev-2">
+                        <button class="btn-style-2 btn-size btn-style-round button-prev-next-2 rotate-svg" aria-disabled="false">
+                            <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
+                                <g stroke="#fff" fill="none" fill-rule="evenodd">
+                                    <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
+                                </g>
+                            </svg>
+                            <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
+                                <g stroke="#fff" fill="none" fill-rule="evenodd">
+                                    <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="ak-pagination-2 ak-style1"></div>
+                    <div class="ak-swiper-button-next-2">
+                        <button class="btn-style-2 btn-size btn-style-round button-prev-next-2" aria-disabled="false">
+                            <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
+                                <g stroke="#fff" fill="none" fill-rule="evenodd">
+                                    <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
+                                </g>
+                            </svg>
+                            <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
+                                <g stroke="#fff" fill="none" fill-rule="evenodd">
+                                    <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

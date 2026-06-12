@@ -1,0 +1,74 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Preloader from "@components/Preloader.astro";
+import CommonHero from "@components/CommonHero.astro";
+import Footer from "@components/Footer.astro";
+import VideoPopup from "@components/VideoPopup.astro";
+import MenuSection from "@components/MenuSection.jsx";
+import FoodShowCase from "@components/FoodShowCase.astro";
+
+const categories = [
+    { key: "ESPRESSO", label: "Espresso", main: "Minuman" },
+    { key: "MANUAL", label: "Manual Brew", main: "Minuman" },
+    { key: "BANANA", label: "Banana", main: "Minuman" },
+    { key: "NON KOPI", label: "Non Kopi", main: "Minuman" },
+    { key: "CEMAL CEMIL", label: "Cemal Cemil", main: "Makanan" },
+    { key: "INDOMIE", label: "Indomie", main: "Makanan" },
+    { key: "NASI GORENG", label: "Nasi Goreng", main: "Makanan" },
+    { key: "GELATO", label: "Gelato", main: "Es Krim" },
+    { key: "GEPREK", label: "Geprek", main: "Makanan" },
+    { key: "NASI", label: "Nasi", main: "Makanan" },
+    { key: "RICE BOWL", label: "Rice Bowl", main: "Makanan" },
+    { key: "RAMEN", label: "Ramen", main: "Makanan" },
+    { key: "MENU LAINNYA", label: "Menu Lainnya", main: "Makanan" },
+];
+
+// 1x fetch semua menu
+const res = await fetch(`${Astro.url.origin}/api/menus`);
+const allMenus = await res.json();
+
+// favorite untuk FoodShowCase (tanpa fetch baru)
+const favoriteMenus = (allMenus ?? []).filter((m: any) => m.is_favorite === true);
+
+const grouped = (allMenus ?? []).reduce((acc: any, menu: any) => {
+    const key = menu.menu_categories?.name?.trim().toUpperCase();
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(menu);
+    return acc;
+}, {});
+
+const menusByCategory = categories.map((cat) => ({
+    ...cat,
+    menus: grouped[cat.key.trim().toUpperCase()] ?? [],
+}));
+---
+
+<BaseLayout title="Menu | Omah Kopi 78" description="Lihat daftar menu makanan dan minuman favorit di Omah Kopi 78.">
+    <!-- Preloader -->
+    <Preloader />
+    <Header />
+
+    <!-- SECTION CONTENT -->
+    <div id="scrollsmoother-container">
+        <main>
+            <CommonHero title="Menu" breadcrumb="Home" current="menu" bg="/assets/img/image.png" />
+
+            <FoodShowCase menus={favoriteMenus} />
+            <div class="ak-height-150 ak-height-lg-60"></div>
+
+            {menusByCategory.map((cat) => <MenuSection client:visible mainCategory={cat.main} category={cat.label} menus={cat.menus} />)}
+        </main>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <Footer />
+        <div class="loading-overlap"></div>
+
+        <span class="ak-scrollup">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"></path>
+            </svg>
+        </span>
+
+        <VideoPopup />
+    </div>
+</BaseLayout>
