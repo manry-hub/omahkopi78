@@ -1,0 +1,59 @@
+<section>
+    <div class="ak-height-150 ak-height-lg-60"></div>
+
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-form">
+                <h2 class="contact-form-title anim-title-3">Hubungi Kami</h2>
+
+                <form id="whatsappForm">
+                    <div class="from-input">
+                        <input id="waName" placeholder="Nama" class="col-md-5 col-12" type="text" name="name" required />
+                    </div>
+
+                    <div class="col-md-12">
+                        <textarea id="waMessage" name="textarea" rows="5" class="col-12 col-md-10" placeholder="Apa yang ingin ditanyakan.." required
+                        ></textarea>
+                    </div>
+
+                    <div class="ak-height-40 ak-height-lg-20"></div>
+
+                    <div class="ak-btn style-5">
+                        <button type="submit">Kirim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("whatsappForm");
+        if (!form) return;
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("waName")?.value.trim();
+            const messageText = document.getElementById("waMessage")?.value.trim();
+
+            if (!name || !messageText) {
+                alert("Lengkapi semua data dulu");
+                return;
+            }
+
+            const message = `
+Halo kak,
+
+- Nama: ${name}
+- Pesan:
+${messageText}
+      `.trim();
+
+            const phone = "62811151108";
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+            window.open(url, "_blank");
+        });
+    });
+</script>

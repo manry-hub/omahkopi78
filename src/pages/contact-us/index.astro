@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Preloader from "@components/Preloader.astro";
+import CommonHero from "@components/CommonHero.astro";
+import Footer from "@components/Footer.astro";
+import VideoPopup from "@components/VideoPopup.astro";
+import ContactSection from "@components/ContactSection.astro";
+---
+
+<BaseLayout
+    title="Kontak Kami | Omah Kopi 78"
+    description="Hubungi Omah Kopi 78 untuk reservasi meja, tanya menu, atau informasi lokasi dan jam operasional."
+>
+    <!-- Preloader -->
+    <Preloader />
+    <Header />
+
+    <!-- SECTION CONTENT -->
+    <div id="scrollsmoother-container">
+        <main>
+            <CommonHero title="Kontak & Lokasi" breadcrumb="Home" current="contact-us" bg="/assets/img/image.png" />
+
+            <ContactSection />
+        </main>
+        <div class="ak-height-lg-60"></div>
+        <Footer />
+        <div class="loading-overlap"></div>
+
+        <span class="ak-scrollup">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"></path>
+            </svg>
+        </span>
+
+        <VideoPopup />
+    </div>
+</BaseLayout>

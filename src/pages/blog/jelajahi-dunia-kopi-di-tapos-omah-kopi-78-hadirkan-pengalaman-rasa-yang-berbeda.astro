@@ -1,0 +1,109 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Preloader from "@components/Preloader.astro";
+import CommonHero from "@components/CommonHero.astro";
+import Footer from "@components/Footer.astro";
+import VideoPopup from "@components/VideoPopup.astro";
+import WidgetBlog from "@components/WidgetBlog.astro";
+---
+
+<BaseLayout
+    title="Jelajahi Dunia Kopi di Tapos, Omah Kopi 78 Hadirkan Pengalaman Rasa yang Berbeda"
+    description={`Buat warga Tapos dan sekitarnya, kamu tidak perlu jauh-jauh ke pusat kota hanya untuk menikmati kopi enak. Omah Kopi
+                                78 hadir sebagai alternatif lokal dengan kualitas yang tidak kalah dari coffee shop besar. Aksesnya mudah, area parkir
+                                cukup, dan suasananya tidak seramai coffee shop di pusat kota. Kalau kamu sedang bertanya, “Mau ngopi di Tapos di mana
+                                ya?” — mungkin sekarang kamu sudah punya jawabannya.`}
+>
+    <Preloader />
+    <Header />
+    <div id="scrollsmoother-container">
+        <main>
+            <CommonHero title="Blog" breadcrumb="Home" current="blog" bg="/assets/img/image.png" />
+            <div class="container">
+                <div class="ak-height-150 ak-height-lg-60"></div>
+                <div class="blog-details">
+                    <h3 class="anim-title-3">Jelajahi Dunia Kopi di Tapos, Omah Kopi 78 Hadirkan Pengalaman Rasa yang Berbeda</h3>
+                    <div class="blog-details-subtitle">
+                        <p>15 Februari 2026</p>
+                        <p class="blog-details-date"></p>
+                        <p>By: Anjani Putri</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="blog-content" id="scrollGaleria">
+                            <div class="ak-height-50 ak-height-lg-30"></div>
+                            <img class="imagesZoom img-fluid" src="/assets/img/about-interior-two.webp" style="max-height: 500px;" alt="Blog Image" />
+                            <div class="ak-height-75 ak-height-lg-30"></div>
+                            <p>
+                                Di tengah banyaknya coffee shop di kawasan Tapos, Omah Kopi 78 tidak hanya menawarkan kopi yang nikmat. Tempat ini
+                                menghadirkan pengalaman yang benar-benar berbeda — bukan sekadar tempat nongkrong, tapi ruang bersantai untuk
+                                keluarga.
+                            </p>
+                            <br />
+                            <p>
+                                Kalau biasanya coffee shop identik dengan tempat duduk indoor dan suasana urban, di sini Anda akan merasakan atmosfer
+                                yang lebih alami dan menyegarkan.
+                            </p>
+                            <div class="ak-height-75 ak-height-lg-30"></div>
+                            <p>Beberapa pengunjung bahkan mengatakan:</p>
+                            <div class="ak-height-20 ak-height-lg-20"></div>
+                            <div class="quote-option">
+                                <div class="testimonial-section d-flex align-items-center">
+                                    <div class="testimonial-icon-1">
+                                        <img src="/assets/img/testimonial_icon_l.svg" alt="..." />
+                                    </div>
+                                    <div class="testimonial-info-section px-3">
+                                        <p class="testimonial-info-subtitle">
+                                            “Kalau ke sini, kalian nggak bakalan nyesel deh. Vibes-nya tuh kayak lagi di Jogja. Di tengah-tengahnya
+                                            ada danau, bisa lihat hewan, ada burung, kura-kura, iguana, ikan. Jadi nongkrong di sini tuh bisa sekalian
+                                            healing karena tempatnya syahdu banget.”
+                                        </p>
+                                    </div>
+                                    <div class="testimonial-icon-1">
+                                        <img src="/assets/img/testimonial_icon_r.svg" alt="..." />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ak-height-75 ak-height-lg-30"></div>
+
+                            <h4 class="anim-title-2 ak-white-color">Suasana yang Tenang dan Homey</h4>
+                            <div class="ak-height-20 ak-height-lg-20"></div>
+                            <p>
+                                Yang membuat Omah Kopi 78 spesial bukan hanya tempatnya, tapi juga racikan kopinya. Setiap cangkir dibuat dengan
+                                perhatian pada detail mulai dari pemilihan biji kopi hingga teknik penyeduhan.
+                            </p>
+                            <br />
+                            <p>
+                                Baik kamu pecinta espresso yang bold, Latte yang creamy, Manual brew. Semua disajikan dengan konsistensi rasa yang
+                                terjaga. Baristanya juga ramah dan terbuka untuk berdiskusi soal karakter kopi. Jadi kalau kamu ingin mencoba sesuatu
+                                yang baru, jangan ragu untuk bertanya.
+                            </p>
+                            <div class="ak-height-75 ak-height-lg-30"></div>
+                            <h4 class="anim-title-2 ak-white-color">Lokasi Strategis di Tapos</h4>
+                            <div class="ak-height-20 ak-height-lg-20"></div>
+                            <p>
+                                Buat warga Tapos dan sekitarnya, kamu tidak perlu jauh-jauh ke pusat kota hanya untuk menikmati kopi enak. Omah Kopi
+                                78 hadir sebagai alternatif lokal dengan kualitas yang tidak kalah dari coffee shop besar. Aksesnya mudah, area parkir
+                                cukup, dan suasananya tidak seramai coffee shop di pusat kota. Kalau kamu sedang bertanya, “Mau ngopi di Tapos di mana
+                                ya?” mungkin sekarang kamu sudah punya jawabannya.
+                            </p>
+                            <div class="ak-height-75 ak-height-lg-30"></div>
+                        </div>
+                    </div>
+                    <WidgetBlog />
+                </div>
+            </div>
+        </main>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <Footer />
+        <div class="loading-overlap"></div>
+        <span class="ak-scrollup">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"></path>
+            </svg>
+        </span>
+        <VideoPopup />
+    </div>
+</BaseLayout>
