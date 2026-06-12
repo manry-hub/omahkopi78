@@ -1,0 +1,415 @@
+.
+├── astro
+├── astro.config.mjs
+├── dist
+│   ├── client
+│   │   ├── assets
+│   │   │   ├── css
+│   │   │   ├── fonts
+│   │   │   ├── img
+│   │   │   ├── js
+│   │   │   └── sass
+│   │   ├── assets_admin
+│   │   │   ├── css
+│   │   │   ├── fonts
+│   │   │   ├── images
+│   │   │   ├── js
+│   │   │   └── webfonts
+│   │   ├── _astro
+│   │   │   ├── AddFacilityForm.DycR2VNv.js
+│   │   │   ├── AddGalleryForm.B3jOYxxv.js
+│   │   │   ├── AddMenuForm.DefJkiQm.js
+│   │   │   ├── AddReservationTableForm.Dq1ZoKZy.js
+│   │   │   ├── astro_scripts
+│   │   │   ├── BaseClerkControlElement.Du4f2O03.js
+│   │   │   ├── chunk-5RWUYJKV.iI5DGQDX.js
+│   │   │   ├── client.9unXo8s5.js
+│   │   │   ├── client.Cz7IsWXI.js
+│   │   │   ├── EditFacilityForm.BU9Ns0fV.js
+│   │   │   ├── EditGalleryForm.DWzPrBgH.js
+│   │   │   ├── EditMenuForm.Bd19QovG.js
+│   │   │   ├── EditReservationTableForm.DzLGll05.js
+│   │   │   ├── FasilitasAdmin.CCccY8yv.js
+│   │   │   ├── GalleryAdmin.Dj4Ap3rb.js
+│   │   │   ├── index.WFquGv8Z.js
+│   │   │   ├── index.ZvyOo0BH.js
+│   │   │   ├── jsx-runtime.D_zvdyIk.js
+│   │   │   ├── KategoriMenuAdmin.BaUAM0nL.js
+│   │   │   ├── MejaReservasiAdmin.CAp8_SCx.js
+│   │   │   ├── MenuAdmin.BNMnHHVL.js
+│   │   │   ├── MenuSection.nxYmGoXU.js
+│   │   │   ├── page.l3RBRHPI.js
+│   │   │   ├── ProtectCSR.astro_astro_type_script_index_0_lang.DsHQ7mfh.js
+│   │   │   ├── SignedInCSR.astro_astro_type_script_index_0_lang.CjwCd3B2.js
+│   │   │   └── SignedOutCSR.astro_astro_type_script_index_0_lang.DX0UT-zm.js
+│   │   ├── favicon-192.png
+│   │   ├── favicon-48.png
+│   │   ├── favicon-96.png
+│   │   ├── favicon.ico
+│   │   ├── robots.txt
+│   │   ├── sitemap-0.xml
+│   │   ├── sitemap-index.xml
+│   │   └── uploads
+│   │       ├── facilities
+│   │       ├── galleries
+│   │       ├── menus
+│   │       └── reservation_tables
+│   └── server
+│       ├── _astro-internal_middleware.mjs
+│       ├── _@astrojs-ssr-adapter.mjs
+│       ├── chunks
+│       │   ├── astro
+│       │   ├── astro-designed-error-pages_B1i8kmUE.mjs
+│       │   ├── _@astrojs-ssr-adapter_B9bzgIUk.mjs
+│       │   ├── BookingSystem_pGDU3JL3.mjs
+│       │   ├── CommonHero_MXgyA0hQ.mjs
+│       │   ├── db_BmUzJBuw.mjs
+│       │   ├── FoodShowCase_C7Ai3HZG.mjs
+│       │   ├── fs-lite_BcglG1vc.mjs
+│       │   ├── Header_nC92Hkia.mjs
+│       │   ├── index_DjWOzrGu.mjs
+│       │   ├── InternalUIComponentRenderer_BUumGI2W.mjs
+│       │   ├── node_C-0AicNH.mjs
+│       │   ├── noop-middleware_DATTWjIM.mjs
+│       │   ├── path_CKzOSXNI.mjs
+│       │   ├── remote_nCAArvWK.mjs
+│       │   ├── sharp_D9J5Yj0O.mjs
+│       │   ├── SidebarAdmin_B2PtH13-.mjs
+│       │   ├── VideoPopup_DZI6qTQr.mjs
+│       │   └── WidgetBlog_BAGGPrWq.mjs
+│       ├── entry.mjs
+│       ├── manifest_Bi2B9Ex_.mjs
+│       ├── noop-entrypoint.mjs
+│       ├── pages
+│       │   ├── 404.astro.mjs
+│       │   ├── about-us.astro.mjs
+│       │   ├── admin
+│       │   ├── admin.astro.mjs
+│       │   ├── api
+│       │   ├── blog
+│       │   ├── blog.astro.mjs
+│       │   ├── contact-us.astro.mjs
+│       │   ├── facility.astro.mjs
+│       │   ├── _image.astro.mjs
+│       │   ├── index.astro.mjs
+│       │   ├── menu.astro.mjs
+│       │   └── reservation.astro.mjs
+│       └── renderers.mjs
+├── omahkopi78@0.0.1
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   ├── assets
+│   │   ├── css
+│   │   │   ├── plugins
+│   │   │   ├── style.css
+│   │   │   └── style.css.map
+│   │   ├── fonts
+│   │   │   ├── lg.eot
+│   │   │   ├── lg.svg
+│   │   │   ├── lg.ttf
+│   │   │   └── lg.woff
+│   │   ├── img
+│   │   │   ├── about-ibu.webp
+│   │   │   ├── about-imran.webp
+│   │   │   ├── about-interior-one.webp
+│   │   │   ├── about-interior-two.webp
+│   │   │   ├── about-marsa.webp
+│   │   │   ├── about-oma.webp
+│   │   │   ├── about-one.webp
+│   │   │   ├── about-two.webp
+│   │   │   ├── arrow-down-outline.svg
+│   │   │   ├── arrow.svg
+│   │   │   ├── blog-head-one.webp
+│   │   │   ├── blog-head-two.webp
+│   │   │   ├── favicon - Copy.svg
+│   │   │   ├── favicon.svg
+│   │   │   ├── footer_bg.png
+│   │   │   ├── head-about.webp
+│   │   │   ├── head-blog.webp
+│   │   │   ├── head-contact.webp
+│   │   │   ├── head-facility.webp
+│   │   │   ├── head-home.webp
+│   │   │   ├── head-menu.webp
+│   │   │   ├── head-reservation.webp
+│   │   │   ├── home-about.webp
+│   │   │   ├── home-hero.webp
+│   │   │   ├── home-opening.webp
+│   │   │   ├── home-spot-one.webp
+│   │   │   ├── home-spot-two.webp
+│   │   │   ├── hotel-hero-bg.png - Shortcut.lnk
+│   │   │   ├── image.png
+│   │   │   ├── location.svg
+│   │   │   ├── logo.png
+│   │   │   ├── reservation-bg.webp
+│   │   │   ├── review_start.svg
+│   │   │   ├── signature.png
+│   │   │   ├── slider_8_img_3.jpg
+│   │   │   ├── Spa_Wellness.png
+│   │   │   ├── star_line.svg
+│   │   │   ├── star_row.svg
+│   │   │   ├── testimonial_1.jpg
+│   │   │   ├── testimonial_2.jpg
+│   │   │   ├── testimonial_3.jpg
+│   │   │   ├── testimonial_icon_l.svg
+│   │   │   ├── testimonial_icon_r.svg
+│   │   │   └── time-outline.svg
+│   │   ├── js
+│   │   │   ├── main.js
+│   │   │   └── plugins
+│   │   └── sass
+│   │       ├── common
+│   │       ├── default
+│   │       ├── shortcode
+│   │       ├── style.css
+│   │       ├── style.css.map
+│   │       └── style.scss
+│   ├── assets_admin
+│   │   ├── css
+│   │   │   ├── lib
+│   │   │   ├── remixicon.css
+│   │   │   └── style.css
+│   │   ├── fonts
+│   │   │   ├── remixicon.eot
+│   │   │   ├── remixicon.glyph.json
+│   │   │   ├── remixicon.styl
+│   │   │   ├── remixicon.svg
+│   │   │   ├── remixicon.symbol.svg
+│   │   │   ├── remixicon.ttf
+│   │   │   ├── remixicon.woff
+│   │   │   └── remixicon.woff2
+│   │   ├── images
+│   │   │   └── auth
+│   │   ├── js
+│   │   │   ├── app-backup.js
+│   │   │   ├── app.js
+│   │   │   ├── columnChartPageChart.js
+│   │   │   ├── editor.highlighted.min.js
+│   │   │   ├── editor.katex.min.js
+│   │   │   ├── editor.quill.js
+│   │   │   ├── flatpickr.js
+│   │   │   ├── flowbite.min.js
+│   │   │   ├── full-calendar.js
+│   │   │   ├── homeFiveChart.js
+│   │   │   ├── homeFourChart.js
+│   │   │   ├── homeOneChart.js
+│   │   │   ├── homeThreeChart.js
+│   │   │   ├── homeTwoChart.js
+│   │   │   ├── invoice.js
+│   │   │   ├── lib
+│   │   │   ├── lineChartPageChart.js
+│   │   │   ├── main.js
+│   │   │   └── pieChartPageChart.js
+│   │   └── webfonts
+│   │       ├── fa-brands-400.ttf
+│   │       ├── fa-brands-400.woff2
+│   │       ├── fa-regular-400.ttf
+│   │       ├── fa-regular-400.woff2
+│   │       ├── fa-solid-900.ttf
+│   │       ├── fa-solid-900.woff2
+│   │       ├── fa-v4compatibility.ttf
+│   │       └── fa-v4compatibility.woff2
+│   ├── favicon-192.png
+│   ├── favicon-48.png
+│   ├── favicon-96.png
+│   ├── favicon.ico
+│   ├── robots.txt
+│   └── uploads
+│       ├── facilities
+│       │   ├── 1772124203512-wvfjwky85.webp
+│       │   ├── 1772124212405-ux25lrs3b99.webp
+│       │   ├── 1772124222142-0rfi3ks10jyb.webp
+│       │   ├── 1772124231318-ndbfanu0gv.webp
+│       │   ├── 1772124240920-o3qan8steu.webp
+│       │   ├── 1772124249664-iwvq6tbicsq.webp
+│       │   └── 1772124259232-g23u79itn1a.webp
+│       ├── galleries
+│       │   ├── 1772124628252-2wdaaf7q4b.webp
+│       │   ├── 1772124642842-mnyrxycazds.webp
+│       │   ├── 1772124671502-6ms6wobd8eq.webp
+│       │   ├── 1772124680758-jkty8onghf.webp
+│       │   ├── 1772124690112-y14hih2c0v.webp
+│       │   ├── 1772124702637-tfcd4md2idi.webp
+│       │   ├── 1772124719065-1ag0stxa3yl.webp
+│       │   ├── 1772124728717-zeqysmpuy5r.webp
+│       │   ├── 1772124845400-qklmzif7aze.webp
+│       │   ├── 1772124874833-xek0yl8dp0g.webp
+│       │   ├── 1772124892553-n79883m58xm.webp
+│       │   ├── 1772124901869-rfvgcnf9w9.webp
+│       │   ├── 1772124910527-1g80pzkplm.webp
+│       │   ├── 1772124919282-w1maof3nyyc.webp
+│       │   ├── 1772124926896-1rde0me86jb.webp
+│       │   └── 1772124935552-dcf9r21ujht.webp
+│       ├── menus
+│       │   ├── 1772122009649-j2b4j1epzyk.jpg
+│       │   ├── 1772122176302-fqubu8lfbsf.webp
+│       │   ├── 1772122259042-9yc2uq0jexj.webp
+│       │   ├── 1772122341455-wr972e1yimd.jpg
+│       │   ├── 1772122366548-4vggde26c5k.jpg
+│       │   ├── 1772122390520-libxwucfmrc.jpg
+│       │   ├── 1772122402880-znst7x4t0vd.jpg
+│       │   ├── 1772122420777-s80wwdlx4.jpg
+│       │   ├── 1772122436902-wqh9jctpnpn.jpg
+│       │   ├── 1772122465691-2i1u0p1hihg.jpg
+│       │   ├── 1772122484888-413bpqm3kvc.JPG
+│       │   ├── 1772122501341-jkianrtv5dk.jpg
+│       │   ├── 1772122518000-k3ev4u7yn1.jpg
+│       │   ├── 1772122533104-hwip2zy6rj6.JPG
+│       │   ├── 1772122552920-3p2dp91zpbj.jpg
+│       │   ├── 1772122580349-qmocoeylpuq.jpg
+│       │   ├── 1772122599666-s71816920t.JPG
+│       │   ├── 1772122621457-gpfqnzjfj6e.jpg
+│       │   ├── 1772122640576-hnrrwmnzx8.jpg
+│       │   ├── 1772122662909-suc5angs7d.webp
+│       │   ├── 1772122692466-y5hzu1rcyhk.jpg
+│       │   ├── 1772122717389-2m89g4rnzx9.jpg
+│       │   ├── 1772122752847-k6wfm46dexj.jpg
+│       │   ├── 1772122906521-4rplkeham9f.jpg
+│       │   ├── 1772122929867-92bisrp0f3f.webp
+│       │   ├── 1772122961505-eg5e4bqanm4.jpg
+│       │   ├── 1772122991158-fd1qfrvqrhk.jpg
+│       │   ├── 1772123043157-bx3nq43mcnr.jpg
+│       │   ├── 1772123073083-ndddpo6z2k.webp
+│       │   ├── 1772123092699-i53b3crars.webp
+│       │   ├── 1772123113101-y3uhiv1154d.jpg
+│       │   ├── 1772123264285-u2xdqwsmfzc.webp
+│       │   ├── 1772123291527-8byvyqv7n1m.jpg
+│       │   ├── 1772123317098-zq80dx1hq1.jpg
+│       │   ├── 1772123362275-e2sl1848di9.jpg
+│       │   ├── 1772123399803-35qqlyvnmni.webp
+│       │   ├── 1772123542328-s31b0d6vic8.JPG
+│       │   ├── 1772123568106-usuqc07mvm.jpg
+│       │   ├── 1772123598477-0k5q91mbukof.JPG
+│       │   ├── 1772123636127-nczmnc7krd.webp
+│       │   ├── 1772123666680-5gmekptrv1t.jpg
+│       │   ├── 1772123686965-tr9kehwdakg.jpg
+│       │   └── 1772123885884-y3c11ckb6vk.webp
+│       └── reservation_tables
+│           ├── 1772124275249-sk04f5bh2e.webp
+│           ├── 1772124285220-7d2diyym5bm.webp
+│           ├── 1772124319276-pa2bxoerwf.webp
+│           ├── 1772124394593-x0r4nw7d25.webp
+│           ├── 1772124405159-0zxnn2siulr.webp
+│           ├── 1772124415192-2mthlfcwb1n.webp
+│           └── 1772124506968-pgkm06a3afg.webp
+├── src
+│   ├── assets
+│   │   └── img
+│   │       ├── about-ibu.webp
+│   │       ├── about-imran.webp
+│   │       ├── about-interior-one.webp
+│   │       ├── about-interior-two.webp
+│   │       ├── about-marsa.webp
+│   │       ├── about-oma.webp
+│   │       ├── about-one.webp
+│   │       ├── about-two.webp
+│   │       ├── blog-head-one.webp
+│   │       ├── blog-head-two.webp
+│   │       ├── footer_bg.png
+│   │       ├── head-about.webp
+│   │       ├── head-blog.webp
+│   │       ├── head-contact.webp
+│   │       ├── head-facility.webp
+│   │       ├── head-home.webp
+│   │       ├── head-menu.webp
+│   │       ├── head-reservation.webp
+│   │       ├── home-about.webp
+│   │       ├── home-hero.webp
+│   │       ├── home-opening.webp
+│   │       ├── home-spot-one.webp
+│   │       ├── home-spot-two.webp
+│   │       ├── image.png
+│   │       ├── logo.png
+│   │       ├── reservation-bg.webp
+│   │       ├── star_line.svg
+│   │       ├── testimonial_icon_l.svg
+│   │       └── testimonial_icon_r.svg
+│   ├── components
+│   │   ├── AboutContent.astro
+│   │   ├── admin
+│   │   │   ├── AddFacilityForm.jsx
+│   │   │   ├── AddGalleryForm.jsx
+│   │   │   ├── AddMenuForm.jsx
+│   │   │   ├── AddReservationTableForm.jsx
+│   │   │   ├── Dashboard.astro
+│   │   │   ├── EditFacilityForm.jsx
+│   │   │   ├── EditGalleryForm.jsx
+│   │   │   ├── EditMenuForm.jsx
+│   │   │   ├── EditReservationTableForm.jsx
+│   │   │   ├── FasilitasAdmin.jsx
+│   │   │   ├── GalleryAdmin.jsx
+│   │   │   ├── HeaderAdmin.astro
+│   │   │   ├── KategoriMenuAdmin.jsx
+│   │   │   ├── Login.astro
+│   │   │   ├── MejaReservasiAdmin.jsx
+│   │   │   ├── MenuAdmin.jsx
+│   │   │   └── SidebarAdmin.astro
+│   │   ├── BestItem.astro
+│   │   ├── BestSeller.astro
+│   │   ├── BlogsSection.astro
+│   │   ├── BookingSystem.astro
+│   │   ├── CommonHero.astro
+│   │   ├── ContactSection.astro
+│   │   ├── FacilitySection.astro
+│   │   ├── FoodShowCase.astro
+│   │   ├── Footer.astro
+│   │   ├── FunFact.astro
+│   │   ├── GallerySection.astro
+│   │   ├── Header.astro
+│   │   ├── MainHero.astro
+│   │   ├── MenuSection.jsx
+│   │   ├── MenuSplitSection.astro
+│   │   ├── OpeningHoursInfo.astro
+│   │   ├── OurStory.astro
+│   │   ├── Preloader.astro
+│   │   ├── Profile.astro
+│   │   ├── RoomSection.astro
+│   │   ├── Testimonial.astro
+│   │   ├── VideoPopup.astro
+│   │   ├── VideoSection.astro
+│   │   ├── WhyChooseUs.astro
+│   │   └── WidgetBlog.astro
+│   ├── layouts
+│   │   ├── AdminLayout.astro
+│   │   ├── BaseLayout.astro
+│   │   └── LoginLayout.astro
+│   ├── lib
+│   │   └── db.ts
+│   ├── middleware.ts
+│   └── pages
+│       ├── 404
+│       │   └── index.astro
+│       ├── about-us
+│       │   └── index.astro
+│       ├── admin
+│       │   ├── fasilitas
+│       │   ├── index.astro
+│       │   ├── kategori-menu
+│       │   ├── login
+│       │   ├── meja-reservasi
+│       │   ├── menu
+│       │   └── spot
+│       ├── api
+│       │   ├── facility
+│       │   ├── menu-categories
+│       │   ├── menus
+│       │   ├── reservation-tables
+│       │   ├── spot
+│       │   └── upload
+│       ├── blog
+│       │   ├── index.astro
+│       │   ├── jelajahi-dunia-kopi-di-tapos-omah-kopi-78-hadirkan-pengalaman-rasa-yang-berbeda.astro
+│       │   └── mau-ngopi-di-tapos-ini-hidden-gem-coffeeshop-yang-worth-it-untuk-dicoba.astro
+│       ├── contact-us
+│       │   └── index.astro
+│       ├── facility
+│       │   └── index.astro
+│       ├── index.astro
+│       ├── menu
+│       │   └── index.astro
+│       └── reservation
+│           └── index.astro
+├── structure.txt
+└── tsconfig.json
+
+84 directories, 329 files
