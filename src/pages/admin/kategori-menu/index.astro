@@ -1,0 +1,17 @@
+---
+import HeaderAdmin from "@components/admin/HeaderAdmin.astro";
+import KategoriMenu from "@components/admin/KategoriMenuAdmin.jsx";
+import SidebarAdmin from "@components/admin/SidebarAdmin.astro";
+import AdminLayout from "@layouts/AdminLayout.astro";
+
+const response = await fetch(`${Astro.url.origin}/api/menu-categories`);
+const data = await response.json();
+---
+
+<AdminLayout title="Admin">
+    <SidebarAdmin />
+    <main class="dashboard-main">
+        <HeaderAdmin />
+        <KategoriMenu kategoriMenu={data ?? []} client:load />
+    </main>
+</AdminLayout>

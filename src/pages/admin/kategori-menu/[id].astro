@@ -1,0 +1,76 @@
+---
+import HeaderAdmin from "@components/admin/HeaderAdmin.astro";
+import SidebarAdmin from "@components/admin/SidebarAdmin.astro";
+import AdminLayout from "@layouts/AdminLayout.astro";
+import pool from "src/lib/db";
+
+const id = Number(Astro.params.id);
+if (!id) {
+    return Astro.redirect("/admin/kategori-menu");
+}
+
+// ambil detail kategori
+const [rows]: any = await pool.query("SELECT * FROM menu_categories WHERE id = ?", [id]);
+
+if (!rows.length) {
+    return Astro.redirect("/admin/kategori-menu");
+}
+
+const kategori = rows[0];
+
+// UPDATE ketika POST
+if (Astro.request.method === "POST") {
+    const formData = await Astro.request.formData();
+
+    await pool.query(
+        `
+        UPDATE menu_categories
+        SET name = ?, description = ?, position = ?
+        WHERE id = ?
+        `,
+        [formData.get("name"), formData.get("description"), formData.get("position") ? Number(formData.get("position")) : null, id]
+    );
+
+    return Astro.redirect("/admin/kategori-menu");
+}
+---
+
+<AdminLayout title="Admin">
+    <SidebarAdmin />
+    <main class="dashboard-main">
+        <HeaderAdmin />
+
+        <!-- FORM EDIT -->
+        <div class="dashboard-main-body">
+            <h6 class="font-semibold mb-6 dark:text-white">Edit Kategori Menu</h6>
+
+            <form method="POST" class="card border-0 p-6">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-12">
+                        <label class="form-label">Nama</label>
+                        <input class="form-control border border-neutral-200 dark:border-neutral-600" name="name" value={kategori?.name} />
+                    </div>
+
+                    <div class="col-span-12">
+                        <label class="form-label">Keterangan</label>
+                        <input
+                            class="form-control border border-neutral-200 dark:border-neutral-600"
+                            name="description"
+                            value={kategori?.description}
+                        />
+                    </div>
+
+                    <div class="col-span-12">
+                        <label class="form-label">Posisi</label>
+                        <input class="form-control" type="number" name="position" value={kategori?.position} />
+                    </div>
+                    <br />
+                    <div class="col-span-12 flex gap-2">
+                        <button type="submit" class="btn bg-success-600 hover:bg-success-700 text-white rounded-lg px-5 py-[11px]">Simpan</button>
+                        <a href="/admin/kategori-menu" class="btn btn-sm text-white bg-primary-600 hover:bg-primary-700"> Batal </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</AdminLayout>
