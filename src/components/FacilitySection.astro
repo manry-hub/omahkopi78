@@ -1,0 +1,38 @@
+---
+
+const response = await fetch(`${Astro.url.origin}/api/facility`);
+const data = await response.json();
+---
+
+<section class="container">
+  <div class="ak-height-150 ak-height-lg-60"></div>
+
+  {data?.map((item :any) => (
+    <div class={`hotel-facilities ${item.position === "right" ? "reverse-section" : ""}`}>
+      
+      <div class="hotel-facilities-img">
+        <img src={item.image_url} alt={item.desc_name} />
+      </div>
+
+      <div class="hotel-facilities-text">
+        <div class="ak-section-heading ak-sytle-2">
+          <div class="mini-title style-1">
+            <div class="mini-title-border"></div>
+            <p class="mini-text">Fasilitas</p>
+          </div>
+
+          <h2 class="section-title anim-title-2">
+            {item.name}
+          </h2>
+
+          <p class="section-desp">
+            {item.desc_name}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ak-height-150 ak-height-lg-60"></div>
+  ))}
+</section>

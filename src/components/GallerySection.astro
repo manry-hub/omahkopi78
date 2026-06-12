@@ -1,0 +1,87 @@
+---
+const response = await fetch(`${Astro.url.origin}/api/spot`);
+const data = await response.json();
+const LIMIT = 9;
+---
+
+<section class="container">
+    <div class="ak-section-heading ak-style-1 ak-type-1">
+        <div class="ak-section-subtitle">Spot</div>
+        <h2 class="ak-section-title anim-title">Beragam Dokumentasi</h2>
+    </div>
+
+    <div class="ak-height-65 ak-height-lg-30"></div>
+
+    <div id="static-thumbnails">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
+            {
+                data?.map((item: any, index: number) => (
+                    <div class={`col ak-border drop-anim-gallery gallery-item ${index >= LIMIT ? "is-hidden" : ""}`}>
+                        <div class="gallery ak-bg" data-src={item.image_url}>
+                            <div class="gallery style-1">
+                                <div class="gallery-hover">
+                                    <div class="gallery-hover-icon">
+                                        <a href={item.image_url}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                                                <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
+                                                <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    <div class="gallery-hover-info">
+                                        <a>
+                                            <h6>{item.name}</h6>
+                                            <p>Spot</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+{
+    data && data.length > LIMIT && (
+        <div style="display:flex; justify-content:center; margin-top:40px;">
+            <a id="view-toggle" class="text-btn1">
+                Lihat lebih banyak
+            </a>
+        </div>
+    )
+}
+
+<script is:inline>
+    const LIMIT = 9;
+
+    const btn = document.getElementById("view-toggle");
+    const items = document.querySelectorAll(".gallery-item");
+
+    let expanded = false;
+
+    if (btn) {
+        btn.addEventListener("click", () => {
+            expanded = !expanded;
+
+            items.forEach((item, index) => {
+                if (expanded) {
+                    item.classList.remove("is-hidden");
+                } else {
+                    if (index >= LIMIT) {
+                        item.classList.add("is-hidden");
+                    }
+                }
+            });
+
+            btn.textContent = expanded ? "Lihat lebih sedikit" : "Lihat lebih banyak";
+
+            // UX: balik ke atas section saat collapse
+            if (!expanded) {
+                document.getElementById("static-thumbnails")?.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
+</script>
