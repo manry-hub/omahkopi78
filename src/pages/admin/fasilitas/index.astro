@@ -1,0 +1,17 @@
+---
+import FasilitasAdmin from "@components/admin/FasilitasAdmin";
+import HeaderAdmin from "@components/admin/HeaderAdmin.astro";
+import SidebarAdmin from "@components/admin/SidebarAdmin.astro";
+import AdminLayout from "@layouts/AdminLayout.astro";
+
+const response = await fetch(`${Astro.url.origin}/api/facility`);
+const data = await response.json();
+---
+
+<AdminLayout title="Admin">
+    <SidebarAdmin />
+    <main class="dashboard-main">
+        <HeaderAdmin />
+        <FasilitasAdmin facilities={data ?? []} client:load />
+    </main>
+</AdminLayout>
