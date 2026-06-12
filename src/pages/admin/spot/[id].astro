@@ -1,0 +1,24 @@
+---
+import AdminLayout from "@layouts/AdminLayout.astro";
+import HeaderAdmin from "@components/admin/HeaderAdmin.astro";
+import SidebarAdmin from "@components/admin/SidebarAdmin.astro";
+import EditGalleryForm from "@components/admin/EditGalleryForm.jsx";
+
+const id = Number(Astro.params.id);
+if (!id) {
+    return Astro.redirect("/admin/spot");
+}
+const response = await fetch(`${Astro.url.origin}/api/spot/${id}`);
+if (!response.ok) {
+    return Astro.redirect("/admin/spot");
+}
+const gallery = await response.json();
+---
+
+<AdminLayout title="Edit Gallery">
+    <SidebarAdmin />
+    <main class="dashboard-main">
+        <HeaderAdmin />
+        <EditGalleryForm gallery={gallery} client:load />
+    </main>
+</AdminLayout>
