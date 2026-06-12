@@ -1,0 +1,25 @@
+---
+import EditReservationTableForm from "@components/admin/EditReservationTableForm";
+import HeaderAdmin from "@components/admin/HeaderAdmin.astro";
+import SidebarAdmin from "@components/admin/SidebarAdmin.astro";
+import AdminLayout from "@layouts/AdminLayout.astro";
+
+const id = Number(Astro.params.id);
+if (!id) {
+    return Astro.redirect("/admin/meja-reservasi");
+}
+const response = await fetch(`${Astro.url.origin}/api/reservation-tables/${id}`);
+if (!response.ok) {
+    return Astro.redirect("/admin/meja-reservasi");
+}
+const reservationTables = await response.json();
+---
+
+<AdminLayout title="Edit Menu">
+    <SidebarAdmin />
+    <main class="dashboard-main">
+        <HeaderAdmin />
+
+        <EditReservationTableForm reservationTables={reservationTables} client:load />
+    </main>
+</AdminLayout>
