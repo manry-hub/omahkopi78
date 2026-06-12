@@ -1,0 +1,80 @@
+<section class="ak-about-bg-color">
+    <div class="container-fluid">
+        <div class="ak-about ak-style-2">
+            <div class="about-img-2">
+                <img
+                    id="aboutImage"
+                    src="/assets/img/about-one.webp"
+                    alt="Bangunan tradisional Jawa berbentuk limas dengan atap menjulang dan struktur kayu yang khas. Limasan biasanya semi-terbuka. Cocok untuk bersantap santai atau berkumpul dalam kelompok, limasan menghadirkan nuansa tradisional yang hangat dan elegan."
+                    class="img-normal"
+                />
+                <img
+                    src="/assets/img/about-two.webp"
+                    alt="Bangunan tradisional Jawa berbentuk limas dengan atap menjulang dan struktur kayu yang khas. Limasan biasanya semi-terbuka. Cocok untuk bersantap santai atau berkumpul dalam kelompok, limasan menghadirkan nuansa tradisional yang hangat dan elegan."
+                    class="img-hover"
+                />
+            </div>
+            <div class="text-content">
+                <div class="ak-section-heading ak-sytle-2">
+                    <div class="mini-title style-1">
+                        <div class="mini-title-border"></div>
+                        <p class="mini-text">Sejarah</p>
+                    </div>
+                    <h2 class="section-title anim-title-2">
+                        <span>Sedikit Cerita Tentang </span>
+                        "Omah Kopi 78"
+                    </h2>
+                    <p class="section-desp">
+                        Omah Kopi 78 lahir dari semangat kebersamaan dan kerja keras. sebuah impian sederhana yang dikerjakan dengan gotong royong dan
+                        sungguh-sungguh. Dimulai dari sebuah tempat kecil dengan secangkir kopi, cemilan, dan beberapa hidangan berat.
+                    </p>
+                    <br />
+                    <p class="section-desp">
+                        Kami terus berkembang perlahan menjadi ruang bagi setiap sahabat kopi untuk berkumpul, bersantai, dan menikmati momen
+                        berharga. dan sampai saat ini, omah kopi 78 merupakan restoran favorit yang terletak di Leuwinanggung, Tapos, Depok.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .ak-about {
+        display: flex;
+        align-items: center; /* center secara vertikal */
+        justify-content: center; /* center secara horizontal */
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    .about-img-2 {
+        position: relative;
+        max-height: 600px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .about-img-2 img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease;
+    }
+
+    .img-hover {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .about-img-2:hover .img-hover {
+        opacity: 1;
+        min-height: 520px;
+    }
+
+    .about-img-2:hover {
+        transform: scale(1.05);
+    }
+</style>
