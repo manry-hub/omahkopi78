@@ -1,0 +1,87 @@
+---
+const { title = "ADMIN" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Thememarch" />
+
+        <link rel="icon" href="/Favicon.svg" />
+        <title>{title}</title>
+
+        <!-- google fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- remix icon font css  -->
+        <link rel="stylesheet" href="/assets_admin/css/remixicon.css" />
+        <!-- Apex Chart css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/apexcharts.css" />
+        <!-- Data Table css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/dataTables.min.css" />
+        <!-- Text Editor css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/editor-katex.min.css" />
+        <link rel="stylesheet" href="/assets_admin/css/lib/editor.atom-one-dark.min.css" />
+        <link rel="stylesheet" href="/assets_admin/css/lib/editor.quill.snow.css" />
+        <!-- Date picker css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/flatpickr.min.css" />
+        <!-- Calendar css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/full-calendar.css" />
+        <!-- Vector Map css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/jquery-jvectormap-2.0.5.css" />
+        <!-- Popup css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/magnific-popup.css" />
+        <!-- Slick Slider css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/slick.css" />
+        <!-- prism css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/prism.css" />
+        <!-- file upload css -->
+        <link rel="stylesheet" href="/assets_admin/css/lib/file-upload.css" />
+
+        <link rel="stylesheet" href="/assets_admin/css/lib/audioplayer.css" />
+        <!-- main css -->
+        <link rel="stylesheet" href="/assets_admin/css/style.css" />
+    </head><body class="bg-neutral-100 dark:bg-neutral-800 dark:text-white"></body>
+</html>
+
+<body>
+    <slot />
+
+    <!-- JS -->
+
+    <!-- jQuery library js -->
+    <script src="/assets_admin/js/lib/jquery-3.7.1.min.js" is:inline></script>
+    <!-- Apex Chart js -->
+    <script src="/assets_admin/js/lib/apexcharts.min.js" is:inline></script>
+    <!-- Data Table js -->
+    <script src="/assets_admin/js/lib/simple-datatables.min.js" is:inline></script>
+    <!-- Iconify Font js -->
+    <script src="/assets_admin/js/lib/iconify-icon.min.js" is:inline></script>
+    <!-- jQuery UI js -->
+    <script src="/assets_admin/js/lib/jquery-ui.min.js" is:inline></script>
+    <!-- Vector Map js -->
+    <script src="/assets_admin/js/lib/jquery-jvectormap-2.0.5.min.js" is:inline></script>
+    <script src="/assets_admin/js/lib/jquery-jvectormap-world-mill-en.js" is:inline></script>
+    <!-- Popup js -->
+    <script src="/assets_admin/js/lib/magnifc-popup.min.js" is:inline></script>
+    <!-- Slick Slider js -->
+    <script src="/assets_admin/js/lib/slick.min.js" is:inline></script>
+    <!-- prism js -->
+    <script src="/assets_admin/js/lib/prism.js" is:inline></script>
+    <!-- file upload js -->
+    <script src="/assets_admin/js/lib/file-upload.js" is:inline></script>
+    <!-- audio player -->
+    <script src="/assets_admin/js/lib/audioplayer.js" is:inline></script>
+
+    <script src="/assets_admin/js/flowbite.min.js" is:inline></script>
+    <!-- main js -->
+    <script src="/assets_admin/js/app.js" is:inline></script>
+
+    <script src="/assets_admin/js/homeTwoChart.js" is:inline></script>
+</body>

@@ -1,0 +1,144 @@
+---
+import { SEO } from "astro-seo";
+interface Props {
+    title?: string;
+    description?: string;
+    image?: string;
+    canonical?: string;
+}
+
+const {
+    title = "Omah Kopi 78",
+    description = "Omah Kopi 78 Merupakan Cafe & Restoran dengan nuansa alam dan vintage yang berlokasi di Leuwinanggung, Tapos, Depok. bukan hanya sekedar kopi. Kombinasi kopi dan makanan yang tepat membuat waktu bersantai keluarga, bermain dengan anak, atau diskusi terasa lebih menyenangkan.",
+    image = "/favicon.ico",
+    canonical,
+} = Astro.props;
+
+const url = Astro.url.href;
+const canonicalUrl = canonical ?? url;
+const ogImage = image.startsWith("http") ? image : new URL(image, Astro.url.origin).href;
+---
+
+<!doctype html>
+<html lang="id">
+    <head>
+        <!-- Google Tag Manager -->
+        <script
+            is:inline
+            set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MSL9GFDW');`}
+        />
+        <!-- End Google Tag Manager -->
+
+        <SEO
+            title={title}
+            description={description}
+            canonical={canonicalUrl}
+            openGraph={{
+                basic: {
+                    title,
+                    type: "website",
+                    image: ogImage,
+                    url: canonicalUrl,
+                },
+                optional: {
+                    siteName: "Omah Kopi 78",
+                    description,
+                    locale: "id_ID",
+                },
+            }}
+            twitter={{
+                card: "summary_large_image",
+                title,
+                description,
+                image: ogImage,
+            }}
+            extend={{
+                meta: [{ name: "theme-color", content: "#6B4F3B" }],
+            }}
+        />
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Thememarch" />
+
+        <link rel="icon" href="https://omahkopi78.com/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="https://omahkopi78.com/favicon-48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="https://omahkopi78.com/favicon-96.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="https://omahkopi78.com/favicon-192.png" />
+        <link rel="apple-touch-icon" href="https://omahkopi78.com/favicon-192.png" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../assets/css/plugins/bootstrap.min.css" />
+        <link rel="stylesheet" href="../assets/css/plugins/lightgallery.min.css" />
+        <link rel="stylesheet" href="../assets/css/plugins/swiper.min.css" />
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <script is:inline type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Omah Kopi 78",
+                "url": "https://omahkopi78.com"
+            }
+        </script>
+
+        <script is:inline type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SiteNavigationElement",
+                "name": ["Beranda", "Tentang Kami", "Menu", "Fasilitas & Spot", "Blog", "Kontak", "Reservasi"],
+                "url": [
+                    "https://omahkopi78.com/",
+                    "https://omahkopi78.com/about-us",
+                    "https://omahkopi78.com/menu",
+                    "https://omahkopi78.com/facility",
+                    "https://omahkopi78.com/blog",
+                    "https://omahkopi78.com/contact-us",
+                    "https://omahkopi78.com/reservation"
+                ]
+            }
+        </script>
+        <script is:inline type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "CafeOrCoffeeShop",
+                "name": "Omah Kopi 78",
+                "url": "https://omahkopi78.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Depok",
+                    "addressRegion": "Jawa Barat",
+                    "addressCountry": "ID"
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSL9GFDW" height="0" width="0" style="display:none;visibility:hidden"
+            ></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <slot />
+
+        <!-- JS -->
+        <script src="../assets/js/plugins/jquery-3.7.1.min.js" defer></script>
+        <script src="../assets/js/plugins/isotope.pkg.min.js" defer></script>
+        <script src="../assets/js/plugins/swiper.min.js" defer></script>
+        <script src="../assets/js/plugins/lightgallery.min.js" defer></script>
+
+        <script src="../assets/js/plugins/ScrollSmoother.min.js" defer></script>
+        <script src="../assets/js/plugins/SplitText.min.js" defer></script>
+        <script src="../assets/js/plugins/ScrollTrigger.min.js" defer></script>
+        <script src="../assets/js/plugins/ScrollToPlugin.min.js" defer></script>
+        <script src="../assets/js/plugins/gsap.min.js" defer></script>
+
+        <script src="../assets/js/main.js" defer></script>
+    </body>
+</html>
