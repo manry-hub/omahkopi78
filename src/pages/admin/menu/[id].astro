@@ -1,0 +1,35 @@
+---
+import HeaderAdmin from "@components/admin/HeaderAdmin.astro";
+import SidebarAdmin from "@components/admin/SidebarAdmin.astro";
+import AdminLayout from "@layouts/AdminLayout.astro";
+import EditMenuForm from "@components/admin/EditMenuForm.jsx";
+import pool from "src/lib/db";
+
+// ambil id dari url
+const id = Number(Astro.params.id);
+
+if (!id) {
+    return Astro.redirect("/admin/menu");
+}
+
+// ambil menu detail
+const [menuRows]: any = await pool.query("SELECT * FROM menus WHERE id = ?", [id]);
+
+if (!menuRows.length) {
+    return Astro.redirect("/admin/menu");
+}
+
+const menu = menuRows[0];
+
+// ambil categories
+const [categories]: any = await pool.query("SELECT * FROM menu_categories ORDER BY id ASC");
+---
+
+<AdminLayout title="Edit Menu">
+    <SidebarAdmin />
+    <main class="dashboard-main">
+        <HeaderAdmin />
+
+        <EditMenuForm menu={menu} categories={categories} client:load />
+    </main>
+</AdminLayout>
