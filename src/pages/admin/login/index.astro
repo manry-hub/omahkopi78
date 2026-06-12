@@ -1,0 +1,46 @@
+---
+import LoginLayout from "../../../layouts/LoginLayout.astro";
+import { SignIn } from "@clerk/astro/components";
+---
+
+<LoginLayout title="Admin Login">
+    <div class="wrapper">
+        <div class="card">
+            <SignIn withSignUp={false} signUpUrl="/404" forceRedirectUrl="/admin" />
+        </div>
+    </div>
+</LoginLayout>
+
+<style>
+    .wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top, #1a1a1a, #000000 70%);
+        padding: 20px;
+    }
+
+    .card {
+        background: linear-gradient(145deg, #111111, #1c1c1c);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+        border-radius: 16px;
+        padding: 40px;
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+        .card {
+            padding: 28px;
+        }
+
+        .gold-button {
+            width: 100%;
+        }
+    }
+</style>
