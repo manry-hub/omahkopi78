@@ -1,0 +1,48 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Preloader from "@components/Preloader.astro";
+import MainHero from "@components/MainHero.astro";
+import AboutContent from "@components/AboutContent.astro";
+import OpeningHoursInfo from "@components/OpeningHoursInfo.astro";
+import FoodShowCase from "@components/FoodShowCase.astro";
+import BestItem from "@components/BestItem.astro";
+import Testimonial from "@components/Testimonial.astro";
+import BookingSystem from "@components/BookingSystem.astro";
+import Footer from "@components/Footer.astro";
+import VideoPopup from "@components/VideoPopup.astro";
+const res = await fetch(`${Astro.url.origin}/api/menus?favorite=true`);
+const favoriteMenus = await res.json();
+---
+
+<BaseLayout
+    title="Omah Kopi 78"
+    description="Omah Kopi 78 Merupakan Cafe & Restoran dengan nuansa alam dan vintage yang berlokasi di Leuwinanggung, Tapos, Depok. bukan hanya sekedar kopi. Kombinasi kopi dan makanan yang tepat membuat waktu bersantai keluarga, bermain dengan anak, atau diskusi terasa lebih menyenangkan."
+>
+    <div id="minicircle"></div>
+    <Preloader />
+    <Header />
+    <div id="scrollsmoother-container">
+        <main>
+            <MainHero />
+            <AboutContent />
+            <OpeningHoursInfo />
+            <FoodShowCase menus={favoriteMenus} />
+            <div class="ak-height-150 ak-height-lg-60"></div>
+            <BestItem />
+            <div class="ak-height-150 ak-height-lg-60"></div>
+            <Testimonial />
+            <div class="ak-height-150 ak-height-lg-60"></div>
+            <BookingSystem />
+        </main>
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <Footer />
+        <div class="loading-overlap"></div>
+        <span class="ak-scrollup">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"></path>
+            </svg>
+        </span>
+        <VideoPopup />
+    </div>
+</BaseLayout>

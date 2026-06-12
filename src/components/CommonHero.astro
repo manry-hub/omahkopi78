@@ -1,0 +1,18 @@
+---
+const { title = "Page Title", breadcrumb = "Home", current = "Page", bg } = Astro.props;
+---
+
+<section>
+    <div class="ak-commmon-hero ak-style1 ak-bg" style={`background-image: url(${bg});`}>
+        <div class="ak-commmon-heading">
+            <div class="ak-section-heading ak-style-1 ak-type-1 ak-color-1 page-top-title">
+                <div class="ak-section-subtitle">
+                    <a href="/">{breadcrumb}</a> / {current}
+                </div>
+                <h2 class="ak-section-title page-title-anim">
+                    {title}
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>

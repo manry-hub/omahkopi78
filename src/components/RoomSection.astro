@@ -1,0 +1,116 @@
+---
+const response = await fetch(`${Astro.url.origin}/api/reservation-tables`);
+const data = await response.json();
+const LIMIT = 3;
+---
+
+<!-- Start Room -->
+<section>
+    <div class="ak-height-150 ak-height-lg-60"></div>
+    <div class="container">
+        <div class="ak-section-heading ak-style-1 ak-type-1">
+            <div class="ak-section-subtitle">Reservasi</div>
+            <h2 class="ak-section-title anim-title">Meja</h2>
+        </div>
+        <div class="ak-height-65 ak-height-lg-30"></div>
+
+        <div class="row row-cols-1 row-cols-lg-3 g-5">
+            {
+                data?.map((item: any, index: number) => (
+                    <div class={`col reservation-item ${index >= LIMIT ? "is-hidden" : ""}`}>
+                        <div class="room-card">
+                            <div class="room-card-img">
+                                <img
+                                    src={item.image_url}
+                                    class="room-card-img-top w-100"
+                                    style="object-fit: cover; height: 300px;"
+                                    alt={item.desc_name}
+                                />
+                                <div class="room-card-img-btn">
+                                    <div class="text-btn">
+                                        <a class="text-btn1 text-uppercase">Kapasitas {item.capacity} orang</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="room-card-body">
+                                <h5 class="room-card-title">{item.name}</h5>
+                                <div class="room-card-info">
+                                    <p>Min. {item.min_people} orang</p>
+                                    <p class="hr-colum" />
+                                    <p>
+                                        Min. {item.min_pay}
+                                        {item.id === 8 ? "jt" : "k"} payment
+                                    </p>
+                                </div>
+                                <p class="room-card-text">{item.desc_name}</p>
+                                <div class="room-footer">
+                                    <a class="room-card-bottom-text" href="/reservation#reservations">
+                                        Reservasi
+                                        <span class="ms-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+                                                <g clip-path="url(#clip0_1355_128)">
+                                                    <path
+                                                        d="M30.3017 14.8709L23.4837 8.05279C23.2388 7.7668 22.8084 7.73346 22.5224 7.97843C22.2364 8.22335 22.203 8.65377 22.448 8.93976C22.4709 8.96642 22.4957 8.99133 22.5224 9.01412L28.1745 14.6731H1.18178C0.805268 14.6731 0.5 14.9784 0.5 15.355C0.5 15.7315 0.805268 16.0367 1.18178 16.0367H28.1745L22.5224 21.6889C22.2364 21.9338 22.203 22.3642 22.448 22.6502C22.693 22.9362 23.1234 22.9696 23.4093 22.7246C23.436 22.7017 23.4609 22.6769 23.4837 22.6502L30.3018 15.8321C30.5661 15.5663 30.5661 15.1368 30.3017 14.8709Z"
+                                                        fill="#FFD28D"
+                                                    />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1355_128">
+                                                        <rect width="30" height="30" fill="white" transform="translate(0.5 0.351562)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+        <div class="ak-height-80 ak-height-lg-30"></div>
+        {
+            data && data.length > LIMIT && (
+                <div style="display:flex; justify-content:center; margin-top:40px;">
+                    <a id="view-toggle" class="text-btn1">
+                        Lihat lebih banyak
+                    </a>
+                </div>
+            )
+        }
+    </div>
+</section>
+<!-- End Room -->
+
+<script is:inline>
+    const LIMIT = 3;
+
+    const btn = document.getElementById("view-toggle");
+    const items = document.querySelectorAll(".reservation-item");
+
+    let expanded = false;
+
+    if (btn) {
+        btn.addEventListener("click", () => {
+            expanded = !expanded;
+
+            items.forEach((item, index) => {
+                if (expanded) {
+                    item.classList.remove("is-hidden");
+                } else {
+                    if (index >= LIMIT) {
+                        item.classList.add("is-hidden");
+                    }
+                }
+            });
+
+            btn.textContent = expanded ? "Lihat lebih sedikit" : "Lihat lebih banyak";
+
+            // UX: balik ke atas section saat collapse
+            if (!expanded) {
+                document.getElementById("ak-section-subtitle")?.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
+</script>
